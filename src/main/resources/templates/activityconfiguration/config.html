@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Create - Activity Provider</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h5 class="mb-0">Activity Configuration</h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="/configuration/configuracao-interfaces" class="btn btn-sm btn-primary float-sm-right">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/usuario/salvar}" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="Technical_description" class="form-label">Technical description</label>
+                            <textarea id="Technical_description" name="Technical_description" class="form-control"
+                                      placeholder="Write the technical description here" required rows="5"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Activity_instructions" class="form-label">Activity instructions</label>
+                            <input type="file" id="Activity_instructions" name="Activity_instructions"
+                                   class="form-control" accept="application/pdf" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Support_material" class="form-label">Support material</label>
+                            <input type="file" id="Support_material" name="Support_material"
+                                   class="form-control" accept="application/pdf" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-sm btn-success"> <i class="fas fa-save"></i> SAVE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
